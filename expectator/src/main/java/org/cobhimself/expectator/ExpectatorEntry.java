@@ -42,9 +42,11 @@ public class ExpectatorEntry<T> {
   /**
    * Constructor which establishes the necessary properties for this entry.
    * <p>
-   * The <code>message</code> sent in is passed to <code>String.format</code> and should have two
-   * placeholders; the first is the expected value (obtained from the parent expectation) and the
-   * second is the actual value (provided to this constructor).
+   * The <code>message</code> sent in is passed to a {@link FailureMessageBuilder} and should have
+   * two named placeholders; the first is the expected value (specified by {expected} and the second
+   * is the actual value (specified by {actual}).
+   * <p>
+   * Example message: "The value {expected} does not equal {actual}"
    *
    * @param expectation the parent {@link Expectation} this entry is associated with
    * @param expectator  the expectator which confirms our expectations
