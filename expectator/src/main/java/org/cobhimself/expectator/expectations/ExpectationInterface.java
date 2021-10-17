@@ -42,10 +42,10 @@ import org.cobhimself.expectator.Expectator;
  * Implementing classes should accept the name in their constructor or implement a
  * <code>setName</code>; this interface does not force either implementation.
  * <p>
- * The general flow this interface provides is: expectation -> one or more expectators -> confirm.
- * This interface does not enforce the mechanism by which the <code>confirm</code> method reports
- * failed expectators. Possible solutions would be to throw an exception and catch it to build up
- * a list of failures; the choice is the implementor's.
+ * The general flow this interface provides is: expectation -&gt; one or more expectators -&gt;
+ * confirm. This interface does not enforce the mechanism by which the <code>confirm</code> method
+ * reports failed expectators. Possible solutions would be to throw an exception and catch it to
+ * build up a list of failures; the choice is the implementor's.
  *
  * @param <T> the type of value expectators will work with (both expected and actual).
  */
@@ -53,18 +53,22 @@ public interface ExpectationInterface<T> {
 
   /**
    * Get the name of this expectation.
+   *
+   * @return the name of the expectation
    */
   String getName();
 
   /**
    * Set the expected value to be used when expectators perform their expectations.
-   * <p>
+   *
    * @param value The expected value expectators will perform expectations against.
    */
   void setExpectedValue(T value);
 
   /**
    * Get the expected value expectators will perform their expectations against.
+   *
+   * @return the expected value
    */
   T getExpectedValue();
 
@@ -84,6 +88,8 @@ public interface ExpectationInterface<T> {
    * @param actual     the actual value to compare our expected value against
    * @param message    the failure message string passed to <code>String.format</code> and
    *                   provided the expected value and actual value
+   *
+   * @return the <code>ExpectationInterface</code>
    */
   ExpectationInterface<T> expect(
       Expectator<T> expectator,

@@ -68,6 +68,8 @@ public class ExpectatorEntry<T> {
 
   /**
    * Get the expectator associated with this entry.
+   *
+   * @return the expectator associated with this entry
    */
   public Expectator<T> getExpectator() {
     return expectator;
@@ -75,13 +77,17 @@ public class ExpectatorEntry<T> {
 
   /**
    * Get the actual value associated with this entry.
+   *
+   * @return the actual value associated with this entry
    */
   public T getActual() {
     return actual;
   }
 
   /**
-   * Get the failure format message used when providing failure details.
+   * Get the failure message used when providing failure details.
+   *
+   * @return the failure message used when providing failure details
    */
   public String getMessage() {
     return message;
@@ -91,6 +97,8 @@ public class ExpectatorEntry<T> {
    * Get the parent expectation this entry is associated with.
    * <p>
    * This allows us to obtain the expected value to be used by our expectator entry.
+   *
+   * @return the parent <code>Expectation</code>
    */
   public Expectation<T> getParentExpectation() {
     return parentExpectation;
@@ -108,6 +116,8 @@ public class ExpectatorEntry<T> {
 
   /**
    * Get specific details about the expected vs actual values for failure messages.
+   *
+   * @return the outcome details as to why a failure occurred.
    */
   public String outcomeDetails() {
     return new FailureMessageBuilder()

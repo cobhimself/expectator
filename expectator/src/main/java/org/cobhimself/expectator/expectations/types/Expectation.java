@@ -94,6 +94,8 @@ public class Expectation<T> implements ExpectationInterface<T> {
    * Expect the value stored by this <code>Expectation</code> is equal to the given value.
    *
    * @param actual the value we expect to be equal to our expected value
+   *
+   * @return self
    */
   public ExpectationInterface<T> expectEquals(T actual) {
     this.expect(
@@ -109,6 +111,8 @@ public class Expectation<T> implements ExpectationInterface<T> {
    * Expect the value stored by this <code>Expectation</code> is not equal to the given value.
    *
    * @param actual the value we expect to be equal to our expected value
+   *
+   * @return self
    */
   public ExpectationInterface<T> expectNotEquals(T actual) {
     this.expect(
@@ -122,6 +126,8 @@ public class Expectation<T> implements ExpectationInterface<T> {
 
   /**
    * Expect our expected value to not be null.
+   *
+   * @return self
    */
   public ExpectationInterface<T> expectNotNull() {
     this.expect(
@@ -135,6 +141,8 @@ public class Expectation<T> implements ExpectationInterface<T> {
 
   /**
    * Expect our expected value to not be null.
+   *
+   * @return self
    */
   public ExpectationInterface<T> expectNull() {
     this.expect(
@@ -158,6 +166,8 @@ public class Expectation<T> implements ExpectationInterface<T> {
    *                   against
    * @param message    the failure message string passed to {@link FailureMessageBuilder} provided
    *                   the expected value and actual value
+   *
+   * @return self
    */
   @Override public ExpectationInterface<T> expect(
       Expectator<T> expectator,
@@ -188,6 +198,8 @@ public class Expectation<T> implements ExpectationInterface<T> {
 
   /**
    * Get the expected value expectators will perform their expectations against.
+   *
+   * @return the expected value
    */
   @Override public T getExpectedValue() {
     return this.expectedValue;
@@ -195,6 +207,8 @@ public class Expectation<T> implements ExpectationInterface<T> {
 
   /**
    * Get the name of this <code>Expectation</code>.
+   *
+   * @return the name of this <code>Expectation</code>
    */
   @Override public String getName() {
     return name;

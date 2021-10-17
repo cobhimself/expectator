@@ -50,6 +50,8 @@ public class BooleanExpectation extends Expectation<Boolean> {
 
   /**
    * Expect our expected value will be true upon confirmation.
+   *
+   * @return self
    */
   public BooleanExpectation expectTrue() {
     this.expectEquals(true);
@@ -59,6 +61,8 @@ public class BooleanExpectation extends Expectation<Boolean> {
 
   /**
    * Expect our expected value will be false upon confirmation.
+   *
+   * @return self
    */
   public BooleanExpectation expectFalse() {
     this.expectEquals(false);

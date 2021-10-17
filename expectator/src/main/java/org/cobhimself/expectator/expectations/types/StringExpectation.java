@@ -29,7 +29,8 @@ public class StringExpectation extends Expectation<String> {
   /**
    * Construct a <code>StringExpectation</code> without specifying the expected value up front.
    *
-   * @param name the name of the <code>StringExpectation</code>
+   * @param expectedValue the value we expect against
+   * @param name          the name of the <code>StringExpectation</code>
    */
   protected StringExpectation(String expectedValue, String name) {
     super(expectedValue, name);
@@ -48,6 +49,8 @@ public class StringExpectation extends Expectation<String> {
    * Expect our expected value will be the same length as the given actual value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public StringExpectation expectSameLength(String actual) {
     this.expect(
@@ -63,6 +66,8 @@ public class StringExpectation extends Expectation<String> {
    * Expect our expected value will start with the given actual value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public StringExpectation expectStartsWith(String actual) {
     this.expect(
@@ -78,6 +83,8 @@ public class StringExpectation extends Expectation<String> {
    * Expect our expected value will end with the given actual value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public StringExpectation expectEndsWith(String actual) {
     this.expect(
@@ -93,6 +100,8 @@ public class StringExpectation extends Expectation<String> {
    * Expect our expected value will contain the given actual value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public StringExpectation expectContains(String actual) {
     this.expect(
@@ -108,6 +117,8 @@ public class StringExpectation extends Expectation<String> {
    * Expect our expected value will not contain the given actual value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public StringExpectation expectDoesNotContain(String actual) {
     this.expect(
@@ -121,6 +132,8 @@ public class StringExpectation extends Expectation<String> {
 
   /**
    * Expect our expected value is empty.
+   *
+   * @return self
    */
   public StringExpectation expectEmpty() {
     this.expectEquals("");
@@ -130,6 +143,8 @@ public class StringExpectation extends Expectation<String> {
 
   /**
    * Expect our expected value is empty.
+   *
+   * @return self
    */
   public StringExpectation expectNotEmpty() {
     this.expectNotEquals("");

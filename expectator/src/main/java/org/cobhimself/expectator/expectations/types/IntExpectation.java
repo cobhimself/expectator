@@ -52,6 +52,8 @@ public class IntExpectation extends Expectation<Integer> {
    * Expect our expected value to be greater than the given value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public IntExpectation expectGreaterThan(Integer actual) {
     this.expect(
@@ -67,6 +69,8 @@ public class IntExpectation extends Expectation<Integer> {
    * Expect our expected value to be greater than or equal to the given value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public IntExpectation expectGreaterThanOrEqualTo(Integer actual) {
     this.expect(
@@ -82,6 +86,8 @@ public class IntExpectation extends Expectation<Integer> {
    * Expect our expected value to be less than the given value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public IntExpectation expectLessThan(Integer actual) {
     this.expect(
@@ -97,6 +103,8 @@ public class IntExpectation extends Expectation<Integer> {
    * Expect our expected value to be less than or equal to the given value.
    *
    * @param actual the actual value
+   *
+   * @return self
    */
   public IntExpectation expectLessThanOrEqualTo(Integer actual) {
     this.expect(

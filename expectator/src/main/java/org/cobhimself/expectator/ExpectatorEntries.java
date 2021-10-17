@@ -34,7 +34,7 @@ import java.util.HashSet;
 public class ExpectatorEntries<T> extends HashSet<ExpectatorEntry<T>> {
 
   /**
-   * Confirm all the expectators held.
+   * Confirm all the {@link ExpectatorEntry}s held.
    */
   public void confirm() {
     this.forEach(ExpectatorEntry::confirm);
