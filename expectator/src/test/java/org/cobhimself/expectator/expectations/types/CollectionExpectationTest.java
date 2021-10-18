@@ -3,6 +3,7 @@ package org.cobhimself.expectator.expectations.types;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -94,6 +95,7 @@ class CollectionExpectationTest
             ),
             //Will Fail
             List.of(
+                getExpectation(STRING_LIST_EXPECTED).expectEmpty(),
                 getExpectation(STRING_LIST_EXPECTED).expectEquals(Set.of("one", "two", "three")),
                 getExpectation(STRING_LIST_EXPECTED).expectContains("four"),
                 getExpectation(STRING_LIST_EXPECTED).expectContains(1),
@@ -117,6 +119,7 @@ class CollectionExpectationTest
             ),
             //Will Fail
             List.of(
+                getExpectation(INTEGER_LIST_EXPECTED).expectEmpty(),
                 getExpectation(INTEGER_LIST_EXPECTED).expectEquals(SET_EXPECTED),
                 getExpectation(INTEGER_LIST_EXPECTED).expectContains(1),
                 getExpectation(INTEGER_LIST_EXPECTED).expectContainsAll(Set.of(3, 4)),
@@ -137,12 +140,22 @@ class CollectionExpectationTest
             ),
             //Will Fail
             List.of(
+                getExpectation(SET_EXPECTED).expectEmpty(),
                 getExpectation(SET_EXPECTED).expectContains(1),
                 getExpectation(SET_EXPECTED).expectContainsAll(Set.of(3, 4)),
                 getExpectation(SET_EXPECTED).expectSize(2),
                 getExpectation(SET_EXPECTED).expectDoesNotContain("seven"),
                 getExpectation(SET_EXPECTED).expectDoesNotContainAny(List.of("seven", "nine"))
             )
+        ),
+        Arguments.of(
+            Collections.emptyList(),
+            //Will Pass
+            List.of(
+                getExpectation(Collections.emptyList()).expectEmpty()
+            ),
+            //Will Fail
+            List.of()
         )
     );
   }
