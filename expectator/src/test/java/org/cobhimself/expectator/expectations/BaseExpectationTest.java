@@ -22,13 +22,14 @@
  * SOFTWARE.
  */
 
-package org.cobhimself.expectator.expectations.types;
+package org.cobhimself.expectator.expectations;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.cobhimself.expectator.exceptions.ExpectatorException;
+import org.cobhimself.expectator.expectations.Expectation;
 
 public interface BaseExpectationTest<E extends Expectation<T>, T> {
 

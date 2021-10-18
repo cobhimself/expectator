@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.cobhimself.expectator.expectations.types;
+package org.cobhimself.expectator.expectations;
 
 /**
  * An {@link Expectation} which performs expectations against <code>Boolean</code> values.

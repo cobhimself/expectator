@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.cobhimself.expectator.expectations.types;
+package org.cobhimself.expectator.expectations;
 
 public class StringExpectation extends Expectation<String> {
 

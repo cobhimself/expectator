@@ -1,4 +1,4 @@
-package org.cobhimself.expectator.expectations.types;
+package org.cobhimself.expectator.expectations;
 
 import java.util.Collection;
 

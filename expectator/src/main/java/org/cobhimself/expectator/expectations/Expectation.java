@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package org.cobhimself.expectator.expectations.types;
+package org.cobhimself.expectator.expectations;
 
 import org.cobhimself.expectator.Expectator;
 import org.cobhimself.expectator.ExpectatorEntries;

@@ -25,7 +25,7 @@
 package org.cobhimself.expectator;
 
 import org.cobhimself.expectator.exceptions.ExpectatorException;
-import org.cobhimself.expectator.expectations.types.Expectation;
+import org.cobhimself.expectator.expectations.Expectation;
 
 /**
  * Class which holds an expectator, an actual value to perform expectations against, and the failure

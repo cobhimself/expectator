@@ -1,14 +1,12 @@
-package org.cobhimself.expectator.expectations.types;
+package org.cobhimself.expectator.expectations;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 import org.cobhimself.expectator.exceptions.ExpectatorException;
