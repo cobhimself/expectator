@@ -34,8 +34,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class BooleanExpectationTest implements BaseExpectationTest<BooleanExpectation, Boolean> {
-  String NAME = "Boolean Expectation Name";
-  Boolean EXPECTED = true;
+  final String NAME = "Boolean Expectation Name";
+  final Boolean EXPECTED = true;
 
   private BooleanExpectation expectation;
 

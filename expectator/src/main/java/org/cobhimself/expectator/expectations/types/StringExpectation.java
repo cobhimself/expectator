@@ -54,7 +54,7 @@ public class StringExpectation extends Expectation<String> {
    */
   public StringExpectation expectSameLength(String actual) {
     this.expect(
-        (e, a) -> e.length() == a.length(),
+        (e, a) -> e.length() == ((String) a).length(),
         actual,
         "expected '{expected}' to be the same length as '{actual}' but they are not"
     );
@@ -71,7 +71,7 @@ public class StringExpectation extends Expectation<String> {
    */
   public StringExpectation expectStartsWith(String actual) {
     this.expect(
-        String::startsWith,
+        (e, a) -> e.startsWith(actual),
         actual,
         "expected '{expected}' to start with '{actual}' but it does not"
     );
@@ -88,7 +88,7 @@ public class StringExpectation extends Expectation<String> {
    */
   public StringExpectation expectEndsWith(String actual) {
     this.expect(
-        String::endsWith,
+        (e, a) -> e.endsWith(actual),
         actual,
         "expected '{expected}' to end with '{actual}' but it does not"
     );
@@ -105,7 +105,7 @@ public class StringExpectation extends Expectation<String> {
    */
   public StringExpectation expectContains(String actual) {
     this.expect(
-        String::contains,
+        (e, a) -> e.contains(actual),
         actual,
         "expected '{expected}' to contain '{actual}' but it does not"
     );
@@ -122,7 +122,7 @@ public class StringExpectation extends Expectation<String> {
    */
   public StringExpectation expectDoesNotContain(String actual) {
     this.expect(
-        (e, a) -> !e.contains(a),
+        (e, a) -> !e.contains((String) a),
         actual,
         "expected '{expected}' to not contain '{actual}' but it does"
     );

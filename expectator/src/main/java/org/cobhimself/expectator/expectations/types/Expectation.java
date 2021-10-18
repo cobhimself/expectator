@@ -36,7 +36,7 @@ import org.cobhimself.expectator.expectations.ExpectationInterface;
  * <p>
  * In addition to the <code>expect</code> method required by the <code>ExpectationInterface</code>,
  * this class provides an <code>expectEquals</code> and <code>expectNotEquals</code> pair of
- * methods which can help extending classes provide basic functionality.
+ * methods which can help the extending classes provide basic functionality.
  * <p>
  * Failures result in a {@link ExpectatorException} being thrown.
  * <p>
@@ -47,7 +47,7 @@ import org.cobhimself.expectator.expectations.ExpectationInterface;
  * <code>Expectation</code> names are provided through the constructor and help distinguish this
  * <code>Expectation</code> from others in output.
  *
- * @param <T> the type of value expectators will work with (both expected and actual).
+ * @param <T> the type of value expectators will work with.
  */
 public class Expectation<T> implements ExpectationInterface<T> {
   public static final String NO_EXPECTATOR_ENTRIES_FOUND =
@@ -62,13 +62,13 @@ public class Expectation<T> implements ExpectationInterface<T> {
    * The name of this <code>Expectation</code>; used to separate this expectation from others
    * when output.
    */
-  String name;
+  final String name;
 
   /**
    * A set of <code>Expectator</code>s this <code>Expectation</code> will utilize to confirm our
    * expected value against an actual value.
    */
-  ExpectatorEntries<T> expectatorEntries = new ExpectatorEntries<>();
+  final ExpectatorEntries<T> expectatorEntries = new ExpectatorEntries<>();
 
   /**
    * Construct an <code>Expectation</code> with a known expected value up front.
@@ -171,10 +171,10 @@ public class Expectation<T> implements ExpectationInterface<T> {
    */
   @Override public ExpectationInterface<T> expect(
       Expectator<T> expectator,
-      T actual,
+      Object actual,
       String message
   ) {
-    var expectationEntry = new ExpectatorEntry<T>(
+    var expectationEntry = new ExpectatorEntry<>(
         this,
         expectator,
         actual,

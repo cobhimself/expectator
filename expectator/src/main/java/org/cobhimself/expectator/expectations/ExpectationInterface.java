@@ -47,7 +47,7 @@ import org.cobhimself.expectator.Expectator;
  * reports failed expectators. Possible solutions would be to throw an exception and catch it to
  * build up a list of failures; the choice is the implementor's.
  *
- * @param <T> the type of value expectators will work with (both expected and actual).
+ * @param <T> the type of value expectators will work with.
  */
 public interface ExpectationInterface<T> {
 
@@ -93,7 +93,7 @@ public interface ExpectationInterface<T> {
    */
   ExpectationInterface<T> expect(
       Expectator<T> expectator,
-      T actual,
+      Object actual,
       String message
   );
 }

@@ -31,11 +31,11 @@ import org.cobhimself.expectator.expectations.types.Expectation;
  * Class which holds an expectator, an actual value to perform expectations against, and the failure
  * message template to use when expectations fail.
  *
- * @param <T> the type of value expectators will work with (both expected and actual).
+ * @param <T> the type of value expectators will work with.
  */
 public class ExpectatorEntry<T> {
   private final Expectator<T> expectator;
-  private final T actual;
+  private final Object actual;
   private final String message;
   private final Expectation<T> parentExpectation;
 
@@ -43,8 +43,8 @@ public class ExpectatorEntry<T> {
    * Constructor which establishes the necessary properties for this entry.
    * <p>
    * The <code>message</code> sent in is passed to a {@link FailureMessageBuilder} and should have
-   * two named placeholders; the first is the expected value (specified by {expected} and the second
-   * is the actual value (specified by {actual}).
+   * two named placeholders; the first is the expected value (specified by {expected}) and the
+   * second is the actual value (specified by {actual}).
    * <p>
    * Example message: "The value {expected} does not equal {actual}"
    *
@@ -57,7 +57,7 @@ public class ExpectatorEntry<T> {
   public ExpectatorEntry(
       Expectation<T> expectation,
       Expectator<T> expectator,
-      T actual,
+      Object actual,
       String message
   ) {
     this.parentExpectation = expectation;
@@ -80,7 +80,7 @@ public class ExpectatorEntry<T> {
    *
    * @return the actual value associated with this entry
    */
-  public T getActual() {
+  public Object getActual() {
     return actual;
   }
 

@@ -36,26 +36,26 @@ class ExpectationTest implements BaseExpectationTest<Expectation<String>, String
   @Test
   void testConstructors() {
     this.testExpectedValueAndNameConstructor(
-        new Expectation<String>(EXPECTED, NAME),
+        new Expectation<>(EXPECTED, NAME),
         EXPECTED,
         NAME
     );
 
     this.testNameOnlyConstructor(
-        new Expectation<String>(NAME),
+        new Expectation<>(NAME),
         NAME
     );
   }
 
   @Test
   void testNotNull() {
-    var expectation = new Expectation<String>(EXPECTED, NAME);
+    var expectation = new Expectation<>(EXPECTED, NAME);
     assertDoesNotThrow(() -> expectation.expectNotNull().confirm());
   }
 
   @Test
   void testNull() {
-    var expectation = new Expectation<String>(null, NAME);
+    var expectation = new Expectation<>(null, NAME);
     assertDoesNotThrow(() -> expectation.expectNull().confirm());
   }
 }

@@ -29,7 +29,7 @@ import java.util.HashSet;
 /**
  * Class which helps collect a set of {@link ExpectatorEntry} items.
  *
- * @param <T> the type of value expectators will work with (both expected and actual).
+ * @param <T> the type of value expectators will work with.
  */
 public class ExpectatorEntries<T> extends HashSet<ExpectatorEntry<T>> {
 

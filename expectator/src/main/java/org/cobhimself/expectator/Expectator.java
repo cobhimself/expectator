@@ -27,14 +27,15 @@ package org.cobhimself.expectator;
 import java.util.function.BiPredicate;
 
 /**
- * An <code>Expectator</code> is simply a <code>BiPredicate</code> functional interface whose
- * arguments are both of the same type.
+ * An <code>Expectator</code> is simply a <code>BiPredicate&lt;T, Object&gt;</code> functional
+ * interface whose arguments are the expected value (<code>T</code>) and actual value (the
+ * <code>Object</code>) to be compared in some way.
  * <p>
- * The two arguments used by the <code>Expectator</code> are an expected and actual value. Being
- * a <code>BiPredicate</code>, the return value will be a <code>Boolean</code> which represents the
- * result of testing the expected vs actual value returned by the lambda.
+ * Being a <code>BiPredicate</code>, the return value will be a <code>Boolean</code> which
+ * represents the result of testing the expected vs actual value returned by the lambda.
  *
- * @param <T> the type of expected and actual values being compared
+ * @param <T> the type of the expected value the expectator will hold and will be compared to the
+ *            actual value (of any <code>Object</code> type)
  */
-public interface Expectator<T> extends BiPredicate<T, T> {
+public interface Expectator<T> extends BiPredicate<T, Object> {
 }

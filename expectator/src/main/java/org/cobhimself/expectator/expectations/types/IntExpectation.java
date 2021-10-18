@@ -57,7 +57,7 @@ public class IntExpectation extends Expectation<Integer> {
    */
   public IntExpectation expectGreaterThan(Integer actual) {
     this.expect(
-        (e, a) -> e > a,
+        (e, a) -> e > (Integer) a,
         actual,
         "expected {expected} to be greater than {actual}"
     );
@@ -74,7 +74,7 @@ public class IntExpectation extends Expectation<Integer> {
    */
   public IntExpectation expectGreaterThanOrEqualTo(Integer actual) {
     this.expect(
-        (e, a) -> e >= a,
+        (e, a) -> e >= (Integer) a,
         actual,
         "expected {expected} to be greater than or equal to {actual}"
     );
@@ -91,7 +91,7 @@ public class IntExpectation extends Expectation<Integer> {
    */
   public IntExpectation expectLessThan(Integer actual) {
     this.expect(
-        (e, a) -> e < a,
+        (e, a) -> e < (Integer) a,
         actual,
         "expected {expected} to be less than {actual}"
     );
@@ -108,7 +108,7 @@ public class IntExpectation extends Expectation<Integer> {
    */
   public IntExpectation expectLessThanOrEqualTo(Integer actual) {
     this.expect(
-        (e, a) -> e <= a,
+        (e, a) -> e <= (Integer) a,
         actual,
         "expected {expected} to be less than or equal to {actual}"
     );
