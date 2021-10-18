@@ -29,7 +29,6 @@ import org.cobhimself.expectator.ExpectatorEntries;
 import org.cobhimself.expectator.ExpectatorEntry;
 import org.cobhimself.expectator.FailureMessageBuilder;
 import org.cobhimself.expectator.exceptions.ExpectatorException;
-import org.cobhimself.expectator.expectations.ExpectationInterface;
 
 /**
  * Base expectation class which implements the {@link ExpectationInterface}.
