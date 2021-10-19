@@ -28,10 +28,13 @@ import org.cobhimself.expectator.exceptions.ExpectatorException;
 import org.cobhimself.expectator.expectations.Expectation;
 
 /**
- * Class which holds an expectator, an actual value to perform expectations against, and the failure
- * message template to use when expectations fail.
+ * An <code>ExpectatorEntry</code> is the container in which an <code>Expectator</code> is stored
+ * alongside an actual value to be confirmed against an {@link Expectation}'s expected value at
+ * some point in the future. The <code>Expectator</code> within is NOT run until the
+ * <code>confirm</code> method is called on the <code>ExpectatorEntry</code>. It can be combined
+ * with other <code>ExpectatorEntry</code> instances in {@link ExpectatorEntries} objects.
  *
- * @param <T> the type of value expectators will work with.
+ * @param <T> the type of value the <code>Expectator</code> stores in its expected value.
  */
 public class ExpectatorEntry<T> {
   private final Expectator<T> expectator;
@@ -44,12 +47,12 @@ public class ExpectatorEntry<T> {
    * <p>
    * The <code>message</code> sent in is passed to a {@link FailureMessageBuilder} and should have
    * two named placeholders; the first is the expected value (specified by {expected}) and the
-   * second is the actual value (specified by {actual}).
+   * second is the actual value (specified by {actual}) of an <code>Expectation</code>.
    * <p>
    * Example message: "The value {expected} does not equal {actual}"
    *
    * @param expectation the parent {@link Expectation} this entry is associated with
-   * @param expectator  the expectator which confirms our expectations
+   * @param expectator  the <code>Expectator</code> which confirms our expectations
    * @param actual      the actual value we are confirming our expectations against
    * @param message     the failure message we will use when providing additional details as to why
    *                    our expectations were not met.
@@ -67,7 +70,7 @@ public class ExpectatorEntry<T> {
   }
 
   /**
-   * Get the expectator associated with this entry.
+   * Get the <code>Expectator</code> associated with this entry.
    *
    * @return the expectator associated with this entry
    */
@@ -85,18 +88,18 @@ public class ExpectatorEntry<T> {
   }
 
   /**
-   * Get the failure message used when providing failure details.
+   * Get the failure message template used when providing failure details.
    *
-   * @return the failure message used when providing failure details
+   * @return the failure message template used when providing failure details
    */
   public String getMessage() {
     return message;
   }
 
   /**
-   * Get the parent expectation this entry is associated with.
+   * Get the parent <code>Expectation</code> this <code>ExpectatorEntry</code> is associated with.
    * <p>
-   * This allows us to obtain the expected value to be used by our expectator entry.
+   * This allows us to obtain the expected value for use by the <code>Expectator</code>.
    *
    * @return the parent <code>Expectation</code>
    */
@@ -105,7 +108,7 @@ public class ExpectatorEntry<T> {
   }
 
   /**
-   * Mark the parent expectation as having failed.
+   * Mark the parent <code>Expectation</code> as having failed.
    */
   private void fail() {
     throw new ExpectatorException(
@@ -127,7 +130,9 @@ public class ExpectatorEntry<T> {
   }
 
   /**
-   * Confirm the expectator associated with this entry.
+   * Confirm the <code>Expectator</code> associated with this <code>ExpectatorEntry</code>.
+   * <p>
+   * The <code>Expectator</code> is not run until this method is called!
    */
   public void confirm() {
     if (!this.getExpectator().test(

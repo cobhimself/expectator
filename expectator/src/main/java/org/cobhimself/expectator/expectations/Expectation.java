@@ -39,9 +39,10 @@ import org.cobhimself.expectator.exceptions.ExpectatorException;
  * <p>
  * Failures result in a {@link ExpectatorException} being thrown.
  * <p>
- * Expectators are collected through the use of {@link ExpectatorEntries} so the class can contain
- * multiple expectators to confirm. This allows <code>Expectation</code> classes to become compound
- * expectations through the chaining of multiple <code>expect</code> calls.
+ * {@link Expectator}s are collected within an {@link ExpectatorEntries} instance so the class can
+ * contain multiple <code>Expectator</code>s. This allows <code>Expectation</code>
+ * classes to become compound expectations through the chaining of multiple <code>expect</code>
+ * calls.
  * <p>
  * <code>Expectation</code> names are provided through the constructor and help distinguish this
  * <code>Expectation</code> from others in output.
@@ -109,7 +110,7 @@ public class Expectation<T> implements ExpectationInterface<T> {
   /**
    * Expect the value stored by this <code>Expectation</code> is not equal to the given value.
    *
-   * @param actual the value we expect to be equal to our expected value
+   * @param actual the value we expect to not be equal to our expected value
    *
    * @return self
    */
@@ -139,7 +140,7 @@ public class Expectation<T> implements ExpectationInterface<T> {
   }
 
   /**
-   * Expect our expected value to not be null.
+   * Expect our expected value to be null.
    *
    * @return self
    */
